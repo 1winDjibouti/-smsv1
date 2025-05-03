@@ -1,12 +1,10 @@
 let user1Used = "";
 let user2Used = "";
 let userConnected = false;
-let currentUser = "";
-let url = `https://68147b4b225ff1af1628f9c4.mockapi.io/Messaging`
 
 document.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
-        // chekcing user 1 state
+        // Checking user 1 state
         fetch(`https://68147b4b225ff1af1628f9c4.mockapi.io/Messaging/1`, {
                 method: "GET",
                 headers: { "Content-Type": "application/json" }
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(err);
                 document.getElementById("user").innerHTML = "Erreure Revoir plus tard"
             })
-            //checking user 2 state
+        // Checking user 2 state
         fetch('https://68147b4b225ff1af1628f9c4.mockapi.io/Messaging/2', {
                 method: "GET",
                 headers: { 'Content-Type': "application/json" }
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(err);
                 document.getElementById("user").innerHTML = "Erreure Revoir Plus Tard"
             })
-            //determining current user eligiblity
+        // Determining current user eligibility
         if (user1Used === "false" && userConnected !== "Utilisateur 2") {
             userConnected = "Utilisateur 1"
             fetch("https://68147b4b225ff1af1628f9c4.mockapi.io/Messaging/1", {
@@ -59,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
                 }).then(res => res.json())
                 .then(data => {
-                    console.log("Current User using User1")
+                    console.log("Current User using User2")
                     document.getElementById("user").innerHTML = "Utilisateur 2"
                 })
                 .catch(err => { console.log(err) })
@@ -69,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 3000);
 });
-// resetting the roles
 
+// Resetting the roles
 document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden") {
         if (userConnected === "Utilisateur 1" && userConnected !== "Utilisateur 2") {
@@ -106,4 +104,4 @@ document.addEventListener("visibilitychange", () => {
                 })
         }
     }
-})
+});
