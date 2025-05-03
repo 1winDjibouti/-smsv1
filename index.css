@@ -1,0 +1,52 @@
+.menu {
+    padding: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 5px 5px 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.loading {
+    animation: loading 1000ms linear infinite;
+}
+
+@font-face {
+    font-family: font;
+    src: url(./font/CalSans-Regular.ttf);
+}
+
+p {
+    font-family: font;
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(47, 206, 108);
+    box-shadow: 5px 5px 100px;
+    padding: 15px;
+    position: absolute;
+    top: 800px;
+    left: 300px;
+    transition: all;
+    transition-duration: 10ms;
+}
+
+button:active {
+    box-shadow: 15px 15px 100px green;
+    opacity: 0.6;
+}

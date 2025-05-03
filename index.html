@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/6830/6830366.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Messenger</title>
+</head>
+
+<body>
+    <script src="./index.js"></script>
+    <div class="menu">
+        <img src="https://cdn-icons-png.flaticon.com/128/6830/6830366.png" alt="logo" height="80px">
+        <p style="font-size: larger;">AnonymousMessenger</p>
+        <br>
+        <br>
+        <p id="user" style="position: absolute; top: 100px;">
+            ------
+        </p>
+        <button onclick="send()">
+            <img src="https://cdn-icons-png.flaticon.com/128/9333/9333991.png" alt="logo" height="40px">
+        </button>
+    </div>
+    <input type="text" class="menu" style=" font-family: font; text-align: center; padding: 15px; margin-top: 650px; padding-left: 40px; padding-right: 70px;" id="text">
+    <dialog id="dialog" class="menu" style="display:grid; position: absolute; top: 300px; left: 60px;">
+        <p>
+            En Attente d'un utilisateur...
+        </p>
+        <img src="https://cdn-icons-png.flaticon.com/128/7794/7794282.png" alt="loading" height="50px" class="loading">
+    </dialog>
+</body>
+
+</html>
